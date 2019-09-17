@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // @ts-ignore
-import TouchableBounce from 'react-native/Libraries/Components/Touchable/TouchableBounce';
+// import TouchableBounce from 'react-native/Libraries/Components/Touchable/TouchableBounce';
 import Albums from '../Shared/Albums';
 import Contacts from '../Shared/Contacts';
 import Chat from '../Shared/Chat';
@@ -15,7 +15,11 @@ const getTabBarIcon = (name: string) => ({
   tintColor: string;
   horizontal: boolean;
 }) => (
-  <MaterialIcons name={name} color={tintColor} size={horizontal ? 17 : 24} />
+  <MaterialCommunityIcons
+    name={name}
+    color={tintColor}
+    size={horizontal ? 17 : 24}
+  />
 );
 
 type BottomTabParams = {
@@ -24,6 +28,8 @@ type BottomTabParams = {
   contacts: undefined;
   chat: undefined;
 };
+
+const TouchableBounce = undefined;
 
 const BottomTabs = createBottomTabNavigator<BottomTabParams>();
 
